@@ -1,0 +1,77 @@
+body {
+  overflow: hidden;
+}
+
+.crypto-table {
+  position: relative;
+  margin: 30px 0;
+
+  &__scroll {
+    height: calc(100vh - 100px);
+    overflow: auto;
+    margin-top: 50px;
+    border-bottom: 1px solid #eee;
+
+    &:hover {
+      overflow-y: scroll;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    background: #fff;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+  }
+
+  &__header {
+    position: absolute;
+    top: -37px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #9e9a9e;
+    box-sizing: border-box;
+    background-color: #fdf4d6;
+
+    th {
+      border-bottom: none;
+    }
+
+    tr {
+      display: flex;
+    }
+  }
+
+  &__row {
+    &--bolded {
+      font-size: 13px;
+      font-weight: bold;
+    }
+    &:nth-child(2n) {
+      background-color: #eee;
+    }
+  }
+
+  &__cell {
+    width: 50%;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    @include respond-to("medium") {
+      width: 25%;
+    }
+
+    &--visible {
+      display: none;
+      @include respond-to("medium") {
+        display: table-cell;
+      }
+    }
+  }
+}
